@@ -7,14 +7,30 @@
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <title>Super code</title>
   </head>
-
+  <style type="text/css">
+    h1 {
+      width: 500px;
+      height: 100px;
+      background-color: pink;
+      text-align: center;
+    }
+  </style>
   <body>
     <button id="01">Click me</button>
     <script>
       $(function () {
         $("#01").click(function () {
-          var el = $("<h1></h1>").text("Lesha loves Nastya!");
+          var el = $("<h1></h1>").addClass("love").text("Lesha loves Nastya!");
           $("body").append(el);
+        });
+
+        $("body").on("click", ".love", function (e) {
+          var target = e.target;
+          $(target).animate({ height: "+=100px", width: "+=100px"}, 500);
+          $(target).animate({ height: "-=100px", width: "-=100px"}, 500);
+          $(target).animate({ height: "+=100px", width: "+=100px"}, 500);
+          $(target).animate({ height: "-=100px", width: "-=100px"}, 500);
+          $(target).animate({ backgroundColor: "green"});
         });
       });
     </script>
