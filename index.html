@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <title>Super code</title>
+  </head>
+  <style type="text/css">
+    h1 {
+      width: 500px;
+      height: 100px;
+      background-color: pink;
+      text-align: center;
+    }
+    h3 {
+      color: blueviolet;
+    }
+  </style>
+  <body>
+    <button id="01">Click me</button>
+    <button id="02">Click me late</button>
+    <script>
+      $(function () {
+        $("#01").click(function () {
+          var el = $("<h1></h1>").addClass("love").text("Lesha loves Nastya!");
+          $("body").append(el);
+        });
+
+        $("#02").click(function () {
+          var el = $("<h3></h3>").text("Will we go to walk together right now??");
+          $("body").append(el);
+        });
+
+        $("body").on("click", ".love", function (e) {
+          var target = e.target;
+          $(target).animate({ height: "+=100px", width: "+=100px"}, 500);
+          $(target).animate({ height: "-=100px", width: "-=100px"}, 500);
+          $(target).animate({ height: "+=100px", width: "+=100px"}, 500);
+          $(target).animate({ height: "-=100px", width: "-=100px"}, 500);
+          $(target).animate({ backgroundColor: "green"});
+        });
+      });
+    </script>
+  </body>
+</html>
