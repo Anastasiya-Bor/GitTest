@@ -29,17 +29,19 @@
         });
 
         $("#02").click(function () {
-          var el = $("<h3></h3>").text("Will we go to walk together right now??");
+          var el = $("<h3></h3>").text(
+            "Will we go to walk together right now??"
+          );
           $("body").append(el);
         });
 
         $("body").on("click", ".love", function (e) {
           var target = e.target;
-          $(target).animate({ height: "+=100px", width: "+=100px"}, 500);
-          $(target).animate({ height: "-=100px", width: "-=100px"}, 500);
-          $(target).animate({ height: "+=100px", width: "+=100px"}, 500);
-          $(target).animate({ height: "-=100px", width: "-=100px"}, 500);
-          $(target).animate({ backgroundColor: "green"});
+          $(target).animate({ height: "+=100px", width: "+=100px" }, 500);
+          $(target).animate({ height: "-=100px", width: "-=100px" }, 500);
+          $(target).animate({ height: "+=100px", width: "+=100px" }, 500);
+          $(target).animate({ height: "-=100px", width: "-=100px" }, 500);
+          $(target).animate({ backgroundColor: "green" });
         });
       });
     </script>
